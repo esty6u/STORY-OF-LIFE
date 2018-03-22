@@ -53,9 +53,9 @@ Please visit our wiki for furthur project info:
 
 ### Project Documents
 - [Project Idea](http://www.bethaarava.ort.org.il/) ([Presentation](http://www.bethaarava.ort.org.il/))
-- [Project Inception](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
-- [Software Requirements Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
-- [Software Design Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
+- [Project Inception](https://github.com/esty6u/STORY-OF-LIFE/wiki)
+- [Software Requirements Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki)
+- [Software Design Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki)
 
 ### Iteration Pages
 - [Iteration 0 - ZFR](../../wiki/iter0-zfr)
