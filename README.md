@@ -52,10 +52,10 @@ Please visit our wiki for furthur project info:
 ### [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Team)
 
 ### Project Documents
-- [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
-- [Project Inception](../../wiki/inception)
-- [Software Requirements Specification](../../wiki/srs)
-- [Software Design Specification](../../wiki/sds)
+- [Project Idea](http://www.bethaarava.ort.org.il/) ([Presentation](http://www.bethaarava.ort.org.il/))
+- [Project Inception](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
+- [Software Requirements Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
+- [Software Design Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
 
 ### Iteration Pages
 - [Iteration 0 - ZFR](../../wiki/iter0-zfr)
