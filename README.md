@@ -5,6 +5,7 @@ We are interested in this project in order to help the Weak social layers of the
 High School for deprived youth, Technological High School of the Ministry of Industry, Trade and Labor.
 Located in Jerusalem's Arnona neighborhood. The school offers students a technological - scientific education combining advanced technologies with exact sciences and teleprocessing.
 
+this project developed at Azrieli College of Engineering for a social project.
 
 (See also:rRecommended [checklist](https://docs.google.com/spreadsheets/d/1qbAKaWl_AW9fxv4W83PK_3LNl5nymXiVb8rgcpHQW3w/edit#gid=483512602) for a README)
 
