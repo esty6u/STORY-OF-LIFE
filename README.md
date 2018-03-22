@@ -1,6 +1,10 @@
 # STORY OF MY LIFE
 
-A template repository with wiki for a team project at JCE's software engineering course (replace with the mission of your project).
+We will design a system that will enable teachers, parents and students to monitor and access school experiences that include grades, messages, photo galleries, an adjusted personal study program to each student, etc.
+We are interested in this project in order to help the Weak social layers of the population acquire an education and an adapted profession that will advance them in the population and integrate them into society.
+High School for deprived youth, Technological High School of the Ministry of Industry, Trade and Labor.
+Located in Jerusalem's Arnona neighborhood. The school offers students a technological - scientific education combining advanced technologies with exact sciences and teleprocessing.
+
 
 (See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README)
 
