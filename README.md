@@ -47,7 +47,7 @@ Please visit our wiki for furthur project info:
 
 ### [User Manual](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual) (empty for now)
 
-### [Team Page](../../wiki/team)
+### [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Team)
 
 ### Project Documents
 - [Project Idea](docs/idea.pdf) ([Presentation](docs/idea-slides.pdf))
