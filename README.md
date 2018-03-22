@@ -2,8 +2,9 @@
 
 A template repository with wiki for a team project at JCE's software engineering course (replace with the mission of your project).
 
-(See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README) 
-![project logo (this one for is taken from basecamp - a project management service)](https://goo.gl/images/jt2wFd)
+(See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README)
+
+![project logo (this one for is taken from basecamp - a project management service)](http://www.bethaarava.ort.org.il/landing/images/logo.png)
 
 
 ## Tools & Practices
