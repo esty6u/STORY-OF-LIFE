@@ -6,7 +6,7 @@ High School for deprived youth, Technological High School of the Ministry of Ind
 Located in Jerusalem's Arnona neighborhood. The school offers students a technological - scientific education combining advanced technologies with exact sciences and teleprocessing.
 
 
-(See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README)
+(See also:rRecommended [checklist](https://docs.google.com/spreadsheets/d/1qbAKaWl_AW9fxv4W83PK_3LNl5nymXiVb8rgcpHQW3w/edit#gid=483512602) for a README)
 
 ![project logo (this one for is taken from basecamp - a project management service)](http://www.bethaarava.ort.org.il/landing/images/logo.png)
 
