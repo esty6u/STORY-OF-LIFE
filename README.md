@@ -1,10 +1,10 @@
-# project-ORT
+# STORY OF MY LIFE
 
 A template repository with wiki for a team project at JCE's software engineering course (replace with the mission of your project).
 
 (See also:rRecommended [checklist](https://github.com/ddbeck/readme-checklist/blob/master/checklist.md) for a README) 
 
-![project logo (this one for is taken from basecamp - a project management service)](https://www.klipfolio.com/sites/default/files/integrations/basecamp.png)
+![project logo (this one for is taken from basecamp - a project management service)](C:\Users\esthe\Downloads\WhatsApp Image 2018-03-22 at 15.37.50.jpeg)
 
 ## Tools & Practices
 We're trying to use the best tools and practices in order to produce a quality enginneered product.
