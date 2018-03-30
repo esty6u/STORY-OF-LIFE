@@ -6,7 +6,6 @@ High School for deprived youth, Technological High School of the Ministry of Ind
 Located in Jerusalem's Arnona neighborhood. The school offers students a technological - scientific education combining advanced technologies with exact sciences and teleprocessing.
 
 
-(See also:rRecommended [checklist](https://github.com/jce-il/se-class-materials/blob/master/docs/team/organizations.pdf) for a README)
 
 ![project logo (this one for is taken from basecamp - a project management service)](http://www.bethaarava.ort.org.il/landing/images/logo.png)
 
@@ -17,7 +16,6 @@ We're trying to use the best tools and practices in order to produce a quality e
 |Category|Status|
 |---|---|
 | Version Control System| git & github |
-| Recommended IDE | [VSCode](https://code.visualstudio.com) |
 | Group Chat | [![Join the chat at ](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/MI?utm_source=share-link&utm_medium=link&utm_campaign=share-link) |
 | Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/jce-il/project-template/issues) |
 
