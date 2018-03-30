@@ -14,7 +14,6 @@ this project developed at Azrieli College of Engineering for a social project.
 
 ## Tools & Practices
 We're trying to use the best tools and practices in order to produce a quality enginneered product.
-(replace 'jce-il/project-template' with your 'username/repo' and register to the relevant services)
 
 |Category|Status|
 |---|---|
