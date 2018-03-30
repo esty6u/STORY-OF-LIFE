@@ -11,8 +11,6 @@ this project developed at Azrieli College of Engineering for a social project.
 
 ![project logo (this one for is taken from basecamp - a project management service)](http://www.bethaarava.ort.org.il/landing/images/logo.png)
 
-# Hosting
-https://gitter.im/jce-il/MI?utm_source=share-link&utm_medium=link&utm_campaign=share-link
 
 ## Tools & Practices
 We're trying to use the best tools and practices in order to produce a quality enginneered product.
