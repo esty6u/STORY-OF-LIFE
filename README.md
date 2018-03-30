@@ -43,22 +43,14 @@ This project is developed as part of the requirements for a [software engineerin
 
 Please visit our wiki for furthur project info: 
 
-### [User Manual](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual) (empty for now)
 
-### [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Team)
+### links
 
-### Project Documents
-- [Project Idea](http://www.bethaarava.ort.org.il/) ([Presentation](http://www.bethaarava.ort.org.il/))
-- [Project Inception](https://github.com/esty6u/STORY-OF-LIFE/wiki)
-- [Software Requirements Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki)
-- [Software Design Specification](https://github.com/esty6u/STORY-OF-LIFE/wiki)
+Please visit our wiki for furthur project info:
 
-### Iteration Pages
-- [Iteration 0 - ZFR](../../wiki/iter0-zfr)
-- [Iteration 1 - MVP]()
-- [Iteration 2 - Feature X]()
-- [Iteration 3 - Feature Y]()
-- [Iteration 4 - Feature Z]()
+- [User Manual](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
+- [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Tea)
+
 
 
 
