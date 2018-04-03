@@ -33,7 +33,7 @@ This project is developed as part of the requirements for a [software engineerin
 Please visit our wiki for furthur project info:
 
 - [User Manual](https://github.com/esty6u/STORY-OF-LIFE/wiki/User-Manual)
-- [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Tea)
+- [Team Page](https://github.com/esty6u/STORY-OF-LIFE/wiki/Team)
 
 
 
