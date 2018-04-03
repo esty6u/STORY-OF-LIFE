@@ -17,7 +17,7 @@ We're trying to use the best tools and practices in order to produce a quality e
 |---|---|
 | Version Control System| git & github |
 | Group Chat | [![Join the chat at ](https://badges.gitter.im/jce-il/project-template.svg)](https://gitter.im/jce-il/MI?utm_source=share-link&utm_medium=link&utm_campaign=share-link) |
-| Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/esty6u/STORY-OF-LIFE/issues) |
+| Issues | [![GitHub issues](https://img.shields.io/github/issues/jce-il/project-template.svg?style=flat)](https://github.com/ShiraCahen/Parents-Patrol/issues) |
 
 
 ## Please visit our [live application](https://demo.reactstarterkit.com/)
