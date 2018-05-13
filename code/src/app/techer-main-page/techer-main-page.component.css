@@ -1,0 +1,36 @@
+body{
+    background-image: url("assets/ppp/6.jpg");
+   
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.logopart{
+    height: 100%;
+    width: 30%;
+
+}
+.logoimg{
+    margin-top: 35%;
+    height: 110%;
+    width: 110%;
+    
+}
+.teachernav{
+    background-color: rgb(89, 4, 110);
+}
+.navbar-inverse a{
+    color:white;
+    background-color: rgb(89, 4, 110);
+}
+.navbar a{
+    color:white;
+    background-color: rgb(89, 4, 110);
+}

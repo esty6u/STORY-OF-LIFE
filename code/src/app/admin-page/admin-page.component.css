@@ -1,0 +1,58 @@
+body{
+    background-image: url("assets/ppp/6.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main__body
+{
+    margin-left: 35%;
+    float: right;
+
+}
+yaki{
+    float: right;
+    text-align: right;
+}
+
+.well{
+    text-align: center;
+    background-color: rgb(34, 34, 156);
+    color:white;
+}
+
+.row label{
+    float: right;
+    text-align: right;
+    padding-left: 5%;
+    
+}
+
+
+form{
+    float: right;
+    text-align: right;
+}
+.miriam{
+    margin-right: 40%;
+    text-align: center;
+    padding-top: 1%;
+
+
+}
+
+.logopart{
+    height: 100%;
+    width: 30%;
+
+}
+.logoimg{
+    margin-top: 49%;
+    height: 100%;
+    width: 100%;
+    
+}

@@ -1,0 +1,7 @@
+
+.form-group label
+{
+    float: right;
+}
+
+::-webkit-input-placeholder { text-align:right; }

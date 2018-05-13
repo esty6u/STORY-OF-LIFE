@@ -1,0 +1,80 @@
+body
+{
+    background-image: url("assets/img/background1.jpg");
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+p
+{
+    font-family : arial;
+	color:#ffffff; 
+    font-size : 90px; 
+    text-align: center;
+	text-shadow: 5px 3px gray;
+}
+
+.font1
+{
+    color: black;
+    float: left;
+    font-size: 40px;
+}
+button
+{
+    border-radius: 50%;
+    border: none;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.btn1
+{
+    background-color: rgb(235, 29, 29);
+    border: 3px solid rgb(63, 3, 3); 
+}
+
+.btn2
+{
+    background-color: rgb(56, 172, 10);  
+    border: 3px solid rgb(46, 110, 9);
+}
+
+.btn3
+{
+    background-color: rgb(21, 185, 177);   
+    border: 3px solid rgb(34, 31, 209);
+}
+
+.btn4
+{
+    background-color: rgb(230, 226, 18);  
+    border: 3px solid rgb(243, 111, 22);
+}
+
+.btn5
+{
+    background-color: rgb(203, 122, 223); 
+    border: 3px solid rgb(192, 22, 116);
+}
+
+.btn6
+{
+    background-color: rgb(82, 248, 132); 
+    border: 3px solid rgb(5, 110, 58);
+}
+
+.btn7
+{
+    background-color: rgb(124, 11, 54); 
+    border: 3px solid rgb(59, 3, 29);
+}

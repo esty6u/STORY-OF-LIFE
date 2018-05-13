@@ -1,0 +1,43 @@
+
+
+body { 
+    background: url(assets/img/background2.jpg); 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(36, 138, 104);
+    text-shadow: 2px 2px 2px rgb(211, 209, 117);
+    text-align: right;
+
+  }
+
+
+  .font
+  {
+      color: whitesmoke;
+      font-size: 40px;
+  }
+
+  h1
+  {
+    text-align: center;
+    color: rgb(5, 119, 39);
+    font-size: 55px;
+    line-height: 3;
+  }
+
+  p
+  {
+    text-align: left;
+  }
+
+ 
+
+
+
+
+

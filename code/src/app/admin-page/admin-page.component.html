@@ -1,0 +1,77 @@
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link href='http://serve.fontsproject.com/css?family=Shuneet:400,800' rel='stylesheet' type='text/css'>
+  <body>
+  <div class = "banner"></div>
+  <div class="yaki">
+      <h2 class="well">{{title}}</h2>
+      <form >
+          <div class="row">
+              <div class="col-sm-10">
+                  <legend>רישום למערכת</legend>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-10 form-group">
+                  <label class="req">סוג משתמש *</label>
+                  <select class="user-type" id="type" required [(ngModel)]="user.type" name="type">
+                      <option *ngFor="let type of userTypes" [value]="type">{{type}}</option>
+                  </select>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-10 form-group">
+                  <div [formGroup]="userform">
+                      <label class="req">דואר אלקטרוני *</label>
+                      <input class="col-sm-8" type="email" id="email" required [(ngModel)]="user.email" name="email" formControlName="email" />
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-10 form-group">
+                  <div [formGroup]="userform">
+                      <label class="req">סיסמא *</label>
+                      <input class="col-sm-8" type="password" id="password" required [(ngModel)]="user.password" name="password" formControlName="password" />
+                      
+                  </div>
+              </div>
+          </div>
+  
+          <div class="row">
+              <div class="col-sm-10">
+                  <legend>פרטים אישים</legend>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-10 form-group">
+  
+                  <div [formGroup]="userform">
+                      <label for="firstName" class="req">שם פרטי *</label>
+                      <input class="col-sm-8" type="text" id="firstName" required [(ngModel)]="user.firstName" name="firstName" formControlName="firstname"/>
+                     
+                  </div>
+              </div>
+              <div class="col-sm-10 form-group">
+                  <div [formGroup]="userform">
+                      <label for="lastName" class="req">שם משפחה *</label>
+                      <input class="col-sm-8" type="text" id="lastName" required [(ngModel)]="user.lastName" name="lastName" formControlName="lastname"/>
+                  </div>
+              </div>
+          </div>
+          
+         
+          <div class="btnsign miriam">
+              <button id="Calculate" class="btnsign" (click)="registerUser()">הירשם והמשך לשלב הבא</button>
+              <div class="form-group hideError" [hidden]="!signUpError">
+                  יש למלא את כל שדות החובה כנדרש
+              </div>
+          </div>
+      </form>
+  </div>
+  
+      <div class="logopart">
+        <img class=logoimg src="assets/ppp/logo1.png"/>
+      </div>
+  </body>

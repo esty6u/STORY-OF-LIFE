@@ -1,0 +1,42 @@
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<div class="main__body">
+  <div class="container">
+
+    <div class="login__page">
+      <div class="app-login">
+          <div class="card col-md-4 col-md-offset-4">
+            <div class="login__card">
+              <div class="card-block">
+                 <form class="form-horizontal" #formData='ngForm' (ngSubmit)="signInWithEmail(formData)">
+                      <fieldset>
+                          <h3 align="center">כניסה למערכת</h3>
+                          <div  class="form-group">
+                           <label  for="exampleInputEmail1"  >כתובת אימייל</label>
+                             <input type="text" placeholder="הכנס כתובת אימייל" (ngModel)="email" name="email"class="form-control" id="exampleInputEmail1" required>
+                          </div>
+                          <div  class="form-group" >
+                              <label for="exampleInputPassword1">סיסמא</label>
+                              <input  type="password"  placeholder="הכנס סיסמא" (ngModel)="password" class="form-control" id="exampleInputPassword1"  name="password"  required>
+                  
+                          </div>  
+                          <div class="form-group">
+                      <button type="submit" [disabled]="!formData.valid" class="btn btn-primary btn-block" style="margin-bottom: 20px">
+                        התחבר
+                      </button>
+                      </div>
+                    </fieldset>
+                  </form> 
+                  
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </div> <!-- end card -->
+
+  </div>  <!-- end container -->
+</div> 
+
+
