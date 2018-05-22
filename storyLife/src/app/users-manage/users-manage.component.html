@@ -1,0 +1,57 @@
+<meta charses="utf-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href='http://serve.fontsproject.com/css?family=Shuneet:400,800' rel='stylesheet' type='text/css'>
+<body>
+    <div class = "banner"></div>
+    <div class="yaki">
+        <h2 class="well">ניהול משתמשים</h2>
+        <a  routerLink="/adminHome" class="navbar-brand" type="button" class="btn btn-link">
+          <span class="glyphicon glyphicon-home" ></span> Admin Home
+        </a>
+
+    <form >
+        <div class="" >
+            <div class="form-group">
+                <div [formGroup]="userManageform">
+                    <input  class="" type="email" id="email"  [(ngModel)]="user.email" name="email" formControlName="email" required/>
+                    <label  >הכנס דואר אלקטרוני</label>
+                </div>
+            </div>
+        </div> 
+        <div class="" >
+                <div class="form-group">
+                    <div [formGroup]="userManageform">
+                        <input type="password" id="password"  [(ngModel)]="user.password" 
+                        name="password" formControlName="password" required/>
+                        <label > הכנס סיסמא חדשה</label>
+                    </div>
+                </div>
+        </div> 
+        
+    </form>
+     <div class="opbtnpart">
+
+            <button class="btn btn-default opbtn1" onclick="document.getElementById('email').value = '',document.getElementById('newpassword').value = ''">נקה נתונים</button>
+            <button id="Calculate" class="btn btn-default opbtn" (click)="freezeUser()" > הקפא משתמש </button>
+            <button id="Calculate" class="btn btn-default opbtn" (click)="deleteUser()" > מחק משתמש </button>
+            <button id="Calculate" class="btn btn-default opbtn" (click)="resetPassword()" > החלף סיסמת משתמש </button>
+            <button id="Calculate" class="btn btn-default opbtn" routerLink="/Usersdisplay" > רשימת משתמשים </button>
+        </div>
+    </div>
+   
+    <div class="logopart">
+        <img class=logoimg src='assets/ppp/logo1.png'/>
+      </div>
+
+  <!--<div class="opbtnpart">
+    <button (click)="log()" type="button" class="btn btn-default opbtn">מחק</button>
+    <button (click)="log()" type="button" class="btn btn-default opbtn">הקפא</button>
+  </div>-->
+
+</body>
+
+
+
+

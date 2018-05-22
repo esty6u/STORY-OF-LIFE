@@ -13,6 +13,7 @@
               <ul class="dropdown-menu">
                 <li><a routerLink="/admin">הוספה</a></li>
                 <li><a routerLink="/UsersManage">הקפאה/מחיקה</a></li>
+                <li><a routerLink="/Usersdisplay">רשימת משתמשים</a></li>
               </ul>
             </li>
 
@@ -27,35 +28,20 @@
                 </ul>
             </li>
 
-            <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">גלרייה<span class="caret"></span></a>  
-                <ul class="dropdown-menu">
-                    <li><a href="#">הוספה</a></li>
-                    <li><a href="#">מחיקה</a></li>
-                    <li><a href="#">צפייה</a></li>
-                </ul>
-            </li>
+            
             
 
             <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> הודעות כלליות<span class="caret"></span></a>  
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> מערכת הודעות<span class="caret"></span></a>  
                 <ul class="dropdown-menu">
-                  <li><a href="#">שליחה</a></li>
-                  <li><a href="#">מחיקה</a></li>
-                  <li><a href="#">צפייה</a></li>
+                  <li><a routerLink="/pubMessages">הודעות כלליות</a></li>
+                  <li><a routerLink="/prMessages">הודעות פרטיות</a></li>
+
                 </ul>
             </li>
 
-            <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">הודעות פרטיות<span class="caret"></span></a>  
-                <ul class="dropdown-menu">
-                  <li><a href="#">שליחה</a></li>
-                  <li><a href="#">מחיקה</a></li>
-                  <li><a href="#">צפייה</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#">נתוני תלמידים</a></li>
+            <li><a routerLink="/studentsData">נתוני תלמידים</a></li>
+            <li><a routerLink="/gallery">גלרייה</a></li>
 
             
           </ul>

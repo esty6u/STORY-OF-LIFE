@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
+import { DatabaseService } from '../services/database.service';
 
 @Component({
   selector: 'app-student-home-page',
@@ -8,12 +9,14 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class StudentHomePageComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,public db: DatabaseService) { }
 
   ngOnInit() {
   }
   GoToAmI()
   {
-    this.router.navigate(['am-i']);
+      this.router.navigate(['am-i']);
+    
+    
   }
 }

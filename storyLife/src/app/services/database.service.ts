@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../users/user';
 import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { AlertPromise, Key } from 'selenium-webdriver';
+//import { userInfo } from 'os';
 
 @Injectable()
 export class DatabaseService {
@@ -29,7 +31,9 @@ export class DatabaseService {
   public addUserToDB(user: User) {
     this.dataCollections.add(JSON.parse(JSON.stringify(user)));
   }
-
+  /*public addProUserToDB(a) {
+    this.dataCollections.add(JSON.parse(JSON.stringify(a)));
+  }*/
   //updates users info that was found by email. New data is stored in the "loggedInUser" object
   updateListing(email: string) {
     this.afs.collection("usersInfo").snapshotChanges().map(actions => { //collects the DB table meta data including all table fields id and users
@@ -69,15 +73,60 @@ export class DatabaseService {
     })
   }
 
-/*   public getType(){
-    this.dataCollections.valueChanges().subscribe(collection => {
-      for (var i = 0; i < collection.length; i++) {
-        if (collection[i].uid === this.loggedInUserUID) {
-          return;
+  public deleteUserFromDB(user: User){
+    this.afs.collection("usersInfo").snapshotChanges().map(actions => { //collects the DB table meta data including all table fields id and users
+      return actions.map(a => {
+        const data = a.payload.doc.data() as User;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      });
+      //searches through the collectes list of user the current user to update
+    }).subscribe((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.email == user.email) {
+          this.listingDoc = this.afs.doc(`usersInfo/${doc.id}`); //takes the listing that will be updated by the doc.id (listing's id)
+          this.listingDoc.delete(); //finaly updates the listing
         }
-      }
-    })
-    }
+      });
+    });
+}
 
-*/
+
+public freezeUserFromDB(user: User){
+  /*this.afs.collection("usersInfo").snapshotChanges().map(actions => { //collects the DB table meta data including all table fields id and users
+    return actions.map(a => {
+      const data = a.payload.doc.data() as User;
+      const id = a.payload.doc.id;
+      return { id, ...data };
+    });
+    //searches through the collectes list of user the current user to update
+  }).subscribe((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.email == user.email) {
+        ??this.listingDoc = this.afs.doc(`usersInfo/${doc.id}`); //takes the listing that will be updated by the doc.id (listing's id)
+        ??this.listingDoc.update(JSON.parse(JSON.stringify(this.loggedInUser))); //finaly updates the listing
+      }
+    });
+  });*/
+  
+}
+public resetUserPasswordFromDB(user: User){
+  /*this.afs.collection("usersInfo").snapshotChanges().map(actions => { //collects the DB table meta data including all table fields id and users
+    return actions.map(a => {
+      const data = a.payload.doc.data() as User;
+      const id = a.payload.doc.id;
+      return { id, ...data };
+    });
+    //searches through the collectes list of user the current user to update
+  }).subscribe((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.email == user.email) {
+
+        this.listingDoc = this.afs.doc(`usersInfo/${doc.id}`); //takes the listing that will be updated by the doc.id (listing's id)
+        this.listingDoc.update(JSON.parse(JSON.stringify(this.loggedInUser))); //finaly updates the listing
+      }
+    });
+  });*/
+}
+
 }

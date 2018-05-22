@@ -7,6 +7,9 @@
   <div class = "banner"></div>
   <div class="yaki">
       <h2 class="well">{{title}}</h2>
+      <a  routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
+        <span class="glyphicon glyphicon-home" ></span> Admin Home
+    </a>
       <form >
           <div class="row">
               <div class="col-sm-10">
@@ -63,10 +66,13 @@
           
          
           <div class="btnsign miriam">
-              <button id="Calculate" class="btnsign" (click)="registerUser()">הירשם והמשך לשלב הבא</button>
+              <button id="Calculate" class="btn btn-default opbtn1" (click)="registerUser()">הירשם והמשך לשלב הבא</button>
               <div class="form-group hideError" [hidden]="!signUpError">
                   יש למלא את כל שדות החובה כנדרש
               </div>
+              <button class="btn btn-default opbtn1" onclick="document.getElementById('email').value = '',
+              document.getElementById('password').value = '',document.getElementById('firstName').value = '',
+              document.getElementById('lastName').value = '',document.getElementById('type').value = 'תלמיד'">נקה נתונים</button>
           </div>
       </form>
   </div>

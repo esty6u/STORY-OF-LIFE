@@ -14,11 +14,12 @@ export class AuthService {
  emailError = false;
  
   constructor(private _firebaseAuth: AngularFireAuth, private router:Router) { 
-    this.user = _firebaseAuth.authState;
+    this.user = this._firebaseAuth.authState;
     
    
   }
   signInRegular(email, password) {
+
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password );
  }
 

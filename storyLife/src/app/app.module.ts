@@ -23,6 +23,12 @@ import { StudentSentenceComponent } from './student-sentence/student-sentence.co
 import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 import { StudentHomePageComponent } from './student-home-page/student-home-page.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { PublicMessageesComponent } from './public-messagees/public-messagees.component';
+import { StudentsDataComponent } from './students-data/students-data.component';
+import { UsersManageComponent } from './users-manage/users-manage.component';
+import { DisplayService } from './services/display.service';
+import { UsersDisplayComponent } from './users-display/users-display.component';
 //checkkk
 
 const appRoutes: Routes=[
@@ -66,6 +72,27 @@ const appRoutes: Routes=[
     path:'adminHome',
     component: AdminHomeComponent
   },
+  {
+    path:'gallery',
+    component: GalleryComponent
+  },
+  {
+    path:'messagees',
+    component: PublicMessageesComponent
+  },
+  {
+    path:'studentsData',
+    component: StudentsDataComponent
+  },
+  {
+    path:'usersManage',
+    component: UsersManageComponent
+  },
+  {
+    path:'usersDisplay',
+    component:  UsersDisplayComponent
+
+  },
   
 ]
 @NgModule({
@@ -81,7 +108,12 @@ const appRoutes: Routes=[
     MainPageComponent,
     TecherMainPageComponent,
     StudentHomePageComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    GalleryComponent,
+    PublicMessageesComponent,
+    StudentsDataComponent,
+    UsersManageComponent,
+    UsersDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +126,7 @@ const appRoutes: Routes=[
     AngularFireDatabaseModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DatabaseService,AuthService,AuthGuard],
+  providers: [DatabaseService,AuthService,AuthGuard,DisplayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

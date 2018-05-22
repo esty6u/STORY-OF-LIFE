@@ -6,6 +6,8 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { RouterLink, Router } from '@angular/router';
 import { FormsModule, FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AmIComponent } from '../am-i/am-i.component';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -21,16 +23,19 @@ export class AdminPageComponent {
   userPasswordValidation : string; // will contain the password verification
   title : string;
   date;
+  
   ngOnInit() {
     this.validateForm()
   }
 
   constructor(public db: DatabaseService, public auth: AuthService,private _firebaseAuth: AngularFireAuth, public router: Router) {
     this.userTypes = ['תלמיד', 'מורה','מנהל','הורה'];
+
     this.user = new User(false, this.userTypes[0]); //deafult type is student
     this.signUpError=false; // default- no registration form errors
     this.date = new Date();
-    this.title = "מערכת רישום תלמידים " + this.date.getFullYear();;
+    this.title = "מערכת רישום תלמידים " + this.date.getFullYear();
+    this.user.professions = new Array();
   }
 
   // on register user button click adds new user to Database according to the data that was collected from the registration form
@@ -87,11 +92,7 @@ export class AdminPageComponent {
         Validators.minLength(6),
         Validators.required
       ]),
-      'confimpassword': new FormControl("", [
-        //confim password is required, (must be the same as password - implements in another function).
-        Validators.required
-      ]),
-     
+
       
     });
   }

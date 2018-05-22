@@ -39,9 +39,10 @@ button
 
 .btn1
 {
-    background-color: rgb(235, 29, 29);
+    background-color: rgb(135, 29, 29);
     border: 3px solid rgb(63, 3, 3); 
 }
+
 
 .btn2
 {
@@ -77,4 +78,19 @@ button
 {
     background-color: rgb(124, 11, 54); 
     border: 3px solid rgb(59, 3, 29);
+}
+.btn8
+{
+    background-color: rgb(127, 99, 99);
+    border: 3px solid rgb(63, 3, 3); 
+}
+.btn9
+{
+    background-color: rgb(35, 56, 77);
+    border: 3px solid rgb(63, 3, 3); 
+}
+.btn10
+{
+    background-color: rgb(240, 64, 29);
+    border: 3px solid rgb(63, 3, 3); 
 }

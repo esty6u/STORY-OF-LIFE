@@ -7,6 +7,7 @@ import { FormsModule, FormGroup, FormControl, FormBuilder, Validators, ReactiveF
 import { DATABASE_PROVIDERS,AngularFireDatabase } from 'angularfire2/database';
 import {  FirebaseListObservable } from 'angularfire2/database-deprecated';
 import {AngularFireModule} from 'angularfire2'
+import { database } from 'firebase';
 
 type UserFields = 'email' | 'password';
 type FormErrors = { [u in UserFields]: string };
@@ -42,27 +43,35 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.buildForm(); 
   }
-
+ 
   signInWithEmail(formData) {
-    
+
     this.authService.signInRegular(formData.value.email,formData.value.password)
        .then((res) => {
-          this.db.loggedInUserUID = res.uid; //takes logged in user UID
-          this.authService.userDetails = res;
-         // this.user=res;
-          
-          /*if(this.db.user.type=="תלמיד")
-              this.router.navigate(['studentHomePage']);
-          else if(this.db.user.type=="הורה")
-              this.router.navigate(['parent']);
-          else if(this.db.user.type=="מנהל")
-              this.router.navigate(['admin']);
-          else if(this.db.user.type=="מורה")*/
-              this.router.navigate(['techer']);
 
-          
+          this.db.loggedInUserUID = res.uid; //takes logged in user UID
+
+          this.authService.userDetails = res;
+
+          this.db.getLoggedInUser();
+
+         
+ //  this.user=res;
        })
        .catch((err) => alert(' שגיאה: משתמש או סיסמא לא נכונים '));
+       if(this.db.loggedInUser.type=="תלמיד")
+              this.router.navigate(['studentHomePage']);
+          if(this.db.loggedInUser.type=="הורה")
+              this.router.navigate(['parent']);
+          if(this.db.loggedInUser.type=="מנהל")
+              this.router.navigate(['admin']);
+          if(this.db.loggedInUser.type=="מורה")
+              this.router.navigate(['techer']);
+ }
+ 
+ logout()
+ {
+   this.authService.logout();
  }
  buildForm() { //form validation function - validates user input
   this.userForm = this.fb.group({

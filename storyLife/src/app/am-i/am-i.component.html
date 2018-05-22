@@ -1,43 +1,70 @@
 <meta charset="utf-8" />
 <body>
     <button type="button" class="btn btn-link font1">
-        <span class="glyphicon glyphicon-home"></span> Home2
+        <span class="glyphicon glyphicon-home"></span> Home
     </button>
 
    
 
-  <p>?מה אתה אוהב</p>
+  <p>מקצועות שאני טוב בהם</p>
   <div class="container">  <!-- -->
     <div class="row">
-        <button type="button" class="btn1 btn btn-primary col-lg-2">מתמטיקה</button>
+        <button (click)="writeProfession('מתמטיקה')" type="button" class="btn1 btn btn-primary col-lg-2">מתמטיקה</button>
         <div class="col-lg-2"></div>
         <div class="col-lg-2"></div>
-        <button type="button" class="btn4 btn btn-primary col-lg-1">מכונאות</button>
+        <button (click)="writeProfession('מכונאות')" type="button" class="btn4 btn btn-primary col-lg-1">מכונאות</button>
         <div class="col-lg-2"></div>
         <div class="col-lg-2"></div>
-        <button type="button" class="btn7 btn btn-primary ">ספורט וכושר</button>
+        <button (click)="writeProfession('ספורט וכושר')" type="button" class="btn7 btn btn-primary ">ספורט וכושר</button>
         <div class="col-lg-2"></div>
-        <div class="col-lg-2"></div>     
+        <div class="col-lg-2"></div>    
+       
     </div>
     <div class="row">
         <div class="col-lg-2"></div>
+        <button (click)="writeProfession('עברית')" type="button" class="btn2 btn btn-primary col-lg-2">עברית</button>
         <div class="col-lg-2"></div>
-        <button type="button" class="btn2 btn btn-primary col-lg-2">עברית</button>
+        <button (click)="writeProfession('תנך')" type="button" class="btn5 btn btn-primary ">תנ"ך</button>
         <div class="col-lg-2"></div>
-        <div class="col-lg-2"></div>
-        <button type="button" class="btn5 btn btn-primary ">אומנות וציור</button>
+        
     </div>
 
     <div class="row">
         <div class="col-lg-2"></div>
-        <button type="button" class="btn3 btn btn-primary col-lg-2">מחשבים</button>
+        <div class="col-lg-2"></div>
+
+        <button (click)="writeProfession('מחשבים')" type="button" class="btn3 btn btn-primary col-lg-2">מחשבים</button>
         <div class="col-lg-2"></div>
         <div class="col-lg-2"></div>
-        <button type="button" class="btn6 btn btn-primary ">עיצוב שיער</button>
+
+        <button (click)="writeProfession('עיצוב שיער')" type="button" class="btn6 btn btn-primary ">עיצוב שיער</button>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+
+
         <span class="glyphicons glyphicons-home"></span>
       
       </div>
+      <div class="row">
+        <button (click)="writeProfession('ספרות')" type="button" class="btn8 btn btn-primary col-lg-2">ספרות</button>
+        <div class="col-lg-2"></div>
 
+        <button (click)="writeProfession('אזרחות')" type="button" class="btn9 btn btn-primary col-lg-1">אזרחות</button>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>
+
+        <button (click)="writeProfession('אנגלית')" type="button" class="btn10 btn btn-primary ">אנגלית</button>
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2"></div>  
+  
+       
+    </div>
+    <div class="row">
+
+    <button type="button" (click)="printPro()">מקצועות שנבחרו</button>
+    <br/> <p><strong>{{msg}}</strong></p>
+
+</div>
 
   
 

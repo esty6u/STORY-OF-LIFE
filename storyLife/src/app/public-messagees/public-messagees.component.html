@@ -1,0 +1,42 @@
+<meta charses="utf-8" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href='http://serve.fontsproject.com/css?family=Shuneet:400,800' rel='stylesheet' type='text/css'>
+<body>
+  <div>
+      <h2 class="well"> הודעות כלליות</h2>
+      <a  routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
+        <span class="glyphicon glyphicon-home" ></span> Admin Home
+      </a>
+  
+  </div>
+  <div class="yaki">
+    <form >
+        <div class="" >
+                <div class="form-group">
+                    <div [formGroup]="userManageform">
+                        <label >הוסף טקסט </label>
+                    </div>
+                </div>
+        </div> 
+    </form>
+     <div class="opbtnpart">
+
+            <button class="btn btn-default opbtn1" onclick="document.getElementById('email').value = '',document.getElementById('newpassword').value = ''">נקה נתונים</button>
+            <button id="Calculate" class="btn btn-default opbtn" (click)="sendPrMessage()" > שלח הודעה </button>
+    </div>
+  </div>
+   
+    <div class="logopart">
+        <img class=logoimg src='assets/ppp/logo1.png'/>
+      </div>
+
+  <!--<div class="opbtnpart">
+    <button (click)="log()" type="button" class="btn btn-default opbtn">מחק</button>
+    <button (click)="log()" type="button" class="btn btn-default opbtn">הקפא</button>
+  </div>-->
+
+</body>
+
+

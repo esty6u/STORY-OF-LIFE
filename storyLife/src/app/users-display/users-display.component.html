@@ -1,0 +1,50 @@
+<body>
+  <nav class="navbar navbar-inverse displaytnav">
+      <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
+                      <span class="glyphicon glyphicon-home"></span> Admin Home</a></li>
+              </ul>
+      </div>
+  </nav>
+
+  <div class="c1">
+      <h3> תלמידים</h3>
+       <div *ngFor="let users of userL" >
+           <a *ngIf="users.type =='תלמיד'"  class="list-group-item list-group-item-action">
+               <!--<h5>{{users.type}}</h5>-->
+               {{users.lastName}} {{users.firstName}}
+               <br>
+               {{users.email}}
+           </a>
+       </div>
+    </div> 
+    <div class="c2">
+          <h3>הורים </h3>
+       <div *ngFor="let users of userL" >
+           <a *ngIf="users.type =='הורה'"  class="list-group-item list-group-item-action">
+               <!--<h5>{{users.type}}</h5>-->
+               {{users.lastName}} {{users.firstName}}
+               <br>
+               {{users.email}}
+           </a>
+       </div>
+    </div> 
+    <div class="c3">
+          <h3>מורים </h3>
+       <div *ngFor="let users of userL" > 
+           <a *ngIf="users.type =='מורה'"  class="list-group-item list-group-item-action">
+               <!--<h5>{{users.type}}</h5>-->
+               {{users.lastName}} {{users.firstName}}
+               <br>
+               {{users.email}}
+
+           </a>
+       </div>
+    </div>  
+
+    <div class="logopart">
+        <img class=logoimg src='assets/ppp/logo1.png'/>
+      </div>
+
+</body>

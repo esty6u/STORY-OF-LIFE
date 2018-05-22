@@ -1,0 +1,107 @@
+body{
+    background-image: url("assets/ppp/6.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.logopart{
+    height: 100%;
+    width: 30%;
+
+}
+.logoimg{
+    margin-top: 35%;
+    height: 110%; 
+    width: 110%;
+    
+}
+.navbar-inverse a{
+    color:white;
+    background-color: rgb(34, 34, 156);
+}
+
+.displaytnav{
+    background-color: rgb(34, 34, 156);
+}
+.dropdown-menu a{
+    background-color: white;
+    color: rgb(89, 4, 110);
+}
+.dropdown-menu a:hover{
+    background-color: gray;
+    color: rgb(89, 4, 110);
+}
+.row label{
+    float: right;
+    text-align: right;
+    padding-left: 5%;
+    
+}
+
+
+form{
+    float: right;
+    text-align: right;
+    margin-right: 5%;
+}
+
+
+
+
+
+.opbtn{
+    /*margin-top: -10%;*/ 
+    width: 10%;  
+    display: block;  /*Make the buttons appear below each other */
+    /*padding: 20px;*/
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: block;
+    /*padding-top: 3%;*/
+    margin-left: 76.5%; 
+    background-color: #06c7ce;
+}
+.opbtnpart{
+    float: right;
+    padding-top: 1%;
+    height: 50%;
+    width: 100%;
+
+}
+.opbtn:hover{
+    background-color: white;
+    color: black;
+    border-color: rgb(43, 26, 145);
+}
+.opbtn1{
+    background-color: rgb(172, 172, 172);
+    /*margin-top: -10%;*/ 
+    width: 10%;  
+    display: block;  /*Make the buttons appear below each other */
+    /*padding: 20px;*/
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: block;
+    /*padding-top: 3%;*/
+    margin-left: 76.5%; 
+
+}
+.opbtn1:hover{
+    background-color: white;
+    color: black;
+    border-color: rgb(43, 26, 145);
+}
+.well{
+    text-align: right;
+    padding-right: 10%;
+    background-color: rgb(34, 34, 156);
+    color:white;
+}
