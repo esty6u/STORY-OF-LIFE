@@ -11,13 +11,21 @@
   <div class="c1">
       <h3> תלמידים</h3>
        <div *ngFor="let users of userL" >
-           <a *ngIf="users.type =='תלמיד'"  class="list-group-item list-group-item-action">
+           
+           <button  (click)="onGoToPage2(users)" *ngIf="users.type =='תלמיד'"  class="list-group-item list-group-item-action">
+
+
                <!--<h5>{{users.type}}</h5>-->
                {{users.lastName}} {{users.firstName}}
                <br>
                {{users.email}}
-           </a>
-       </div>
+               <br>
+
+               
+           </button>
+        </div>
+        <div id="professions"></div>
+
     </div> 
     <div class="c2">
           <h3>הורים </h3>

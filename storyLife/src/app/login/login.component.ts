@@ -44,35 +44,35 @@ export class LoginComponent implements OnInit {
     this.buildForm(); 
   }
  
-  signInWithEmail(formData) {
+  signInWithEmail(formData) { 
+    this.db.getLoggedInUser();
 
     this.authService.signInRegular(formData.value.email,formData.value.password)
-       .then((res) => {
 
+       .then((res) => {    
           this.db.loggedInUserUID = res.uid; //takes logged in user UID
 
           this.authService.userDetails = res;
 
-          this.db.getLoggedInUser();
 
-         
- //  this.user=res;
+          if(this.db.loggedInUser.type=="תלמיד")
+          this.router.navigate(['studentHomePage']);
+      if(this.db.loggedInUser.type=="הורה")
+          this.router.navigate(['parent']);
+      if(this.db.loggedInUser.type=="מנהל")
+          this.router.navigate(['admin']);
+      if(this.db.loggedInUser.type=="מורה")
+          this.router.navigate(['techer']);
+          this.db.loggedInUser.loggedIn = true;
+          alert(this.db.loggedInUser.loggedIn)
+        this.db.updateListing(this.db.loggedInUser.uid);
+
        })
        .catch((err) => alert(' שגיאה: משתמש או סיסמא לא נכונים '));
-       if(this.db.loggedInUser.type=="תלמיד")
-              this.router.navigate(['studentHomePage']);
-          if(this.db.loggedInUser.type=="הורה")
-              this.router.navigate(['parent']);
-          if(this.db.loggedInUser.type=="מנהל")
-              this.router.navigate(['admin']);
-          if(this.db.loggedInUser.type=="מורה")
-              this.router.navigate(['techer']);
+
  }
  
- logout()
- {
-   this.authService.logout();
- }
+
  buildForm() { //form validation function - validates user input
   this.userForm = this.fb.group({
     'email': ['', [

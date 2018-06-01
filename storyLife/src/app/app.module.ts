@@ -31,68 +31,28 @@ import { DisplayService } from './services/display.service';
 import { UsersDisplayComponent } from './users-display/users-display.component';
 //checkkk
 
-const appRoutes: Routes=[
-  { 
-    path:'',
-    component: MainPageComponent
-  },
-  { 
-    path:'login',
-    component: LoginComponent
-  },
-  {
-    path:'admin',
-    component: AdminPageComponent
-  },
-  {
-    path:'parent',
-    component: MainPageParentComponent
-  },
-  {
-    path:'techer',
-    component: TecherMainPageComponent
-  },
-  {
-    path:'am-i',
-    component: AmIComponent
-  },
-  {
-    path:'studen-sentence',
-    component: StudentSentenceComponent
-  },
-  {
-    path:'studen-Questionnaire',
-    component: QuestionnaireComponent
-  },
-  {
-    path:'studentHomePage',
-    component: StudentHomePageComponent
-  },
-  {
-    path:'adminHome',
-    component: AdminHomeComponent
-  },
-  {
-    path:'gallery',
-    component: GalleryComponent
-  },
-  {
-    path:'messagees',
-    component: PublicMessageesComponent
-  },
-  {
-    path:'studentsData',
-    component: StudentsDataComponent
-  },
-  {
-    path:'usersManage',
-    component: UsersManageComponent
-  },
-  {
-    path:'usersDisplay',
-    component:  UsersDisplayComponent
 
-  },
+ 
+
+
+
+
+const appRoutes: Routes=[
+  {  path:'',component: MainPageComponent},
+  { path:'login',component: LoginComponent},
+  {path:'admin',component: AdminPageComponent},
+  {path:'parent',component: MainPageParentComponent},
+  {path:'techer', component: TecherMainPageComponent},
+  {path:'am-i',component: AmIComponent},
+  {path:'studen-sentence',component: StudentSentenceComponent},
+  { path:'studen-Questionnaire', component: QuestionnaireComponent},
+  {path:'studentHomePage',component: StudentHomePageComponent},
+  { path:'adminHome',component: AdminHomeComponent},
+  {path:'gallery', component: GalleryComponent},
+  { path:'messagees', component: PublicMessageesComponent},
+  {path:'studentsData', component: StudentsDataComponent},
+  { path:'usersManage', component: UsersManageComponent},
+  { path:'usersDisplay', component:  UsersDisplayComponent},
   
 ]
 @NgModule({

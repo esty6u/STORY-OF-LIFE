@@ -23,13 +23,18 @@ export class UsersManageComponent implements OnInit {
   signUpError: boolean; //if true -> there is an error in the registration form
 
   ngOnInit() {
-    this.userService.getUserList().valueChanges().subscribe(userList =>{
+   
+  this.userService.getUserList().valueChanges().subscribe(userList =>{3
+      this.db.usersUpdate = userList;
       this.userL = userList;
     })
     this.validateForm2()
-  }
 
-  constructor(private userService: DisplayService, private _firebaseAuth: AngularFireAuth, public router: Router,public db1: DatabaseService) { 
+    
+  }
+ 
+
+  constructor(private userService: DisplayService, private _firebaseAuth: AngularFireAuth, public router: Router,public db: DatabaseService) { 
     this.userTypes = ['תלמיד', 'מורה' ,'הורה'];
     this.user = new User(false, this.userTypes[0]); //deafult type is student
     this.signUpError=false; // default- no registration form errors
@@ -64,7 +69,7 @@ export class UsersManageComponent implements OnInit {
     {
       if(this.userL[i].email==this.user.email)
       {
-        this.db1.freezeUserFromDB(this.userL[i]);
+        this.db.freezeUserFromDB(this.userL[i]);
         return;
       }
     }
@@ -85,7 +90,7 @@ export class UsersManageComponent implements OnInit {
     {
       if(this.userL[i].email==this.user.email)
       {
-        this.db1.deleteUserFromDB(this.userL[i]);
+        this.db.deleteUserFromDB(this.userL[i]);
         return;
       }
     }
@@ -96,26 +101,27 @@ export class UsersManageComponent implements OnInit {
   }
 /***********************************************************************************************************************/
   public resetPassword(){
-    
-    /*if(this.userManageform.get('email').invalid || this.userManageform.get('password').invalid)
-     {
-       alert("יש למלא את השדות כנדרש");
-       return;
-     }*/
-     for (var i = 0; i < this.userL.length; i++) 
-     {
-       if(this.userL[i].email==this.user.email)
-       {
-        this.userL[i].password=this.user.password;
-         this.db1.resetUserPasswordFromDB(this.userL[i]);
-         return;
-       }
-     }
-     alert("משתמש לא קיים");
-     this.userManageform = null;
+    //this.db.getusersupdate().valueChanges().subscribe(collection => {
+      for (var i = 0; i < this.db.usersUpdate.length; i++) {
+        if (this.db.usersUpdate[i].email === this.user.email) {
+          this.db.userpass = this.db.usersUpdate[i];
+          this.db.userpass.password = this.user.password;
+          alert("bla");
+          this.db.resetUserPasswordFromDB(this.db.userpass);
+          alert("yakiKaki");
+          return;
+        }
+      }
+
+       alert("asfas")
+       alert("משתמש לא קיים");
      return;
+     }
+
+
+
    
-   }
+   
 
 /***********************************************************************************************************************/
 

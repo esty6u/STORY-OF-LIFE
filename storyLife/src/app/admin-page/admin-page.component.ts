@@ -35,7 +35,6 @@ export class AdminPageComponent {
     this.signUpError=false; // default- no registration form errors
     this.date = new Date();
     this.title = "מערכת רישום תלמידים " + this.date.getFullYear();
-    this.user.professions = new Array();
   }
 
   // on register user button click adds new user to Database according to the data that was collected from the registration form
@@ -59,7 +58,10 @@ export class AdminPageComponent {
         .then((res) => {
 
           //successfully registered:
-          
+          if(this.user.type=='תלמיד')
+          this.user.professions = new Array();
+          if(this.user.type=='מורה')
+            this.user.myStudents=new Array();
           this.user.uid = res.uid; // sets the uid value in the attribute
           this.db.addUserToDB(this.user); // add user to database
           this.router.navigate(['login'])// go to the login screen

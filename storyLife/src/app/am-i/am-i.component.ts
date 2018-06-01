@@ -4,6 +4,8 @@ import { User } from '../users/user';
 import { database } from 'firebase';
 import { DatabaseService } from '../services/database.service';
 import { FormGroup ,FormBuilder} from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { AngularFireAuth } from 'angularfire2/auth';
  var i=0;
 @Component({
   selector: 'app-am-i',
@@ -11,18 +13,37 @@ import { FormGroup ,FormBuilder} from '@angular/forms';
   styleUrls: ['./am-i.component.css']
 })
 export class AmIComponent implements OnInit {
-  constructor(public router: Router,public db:DatabaseService, private fb: FormBuilder) {}
+  
+  constructor(private _firebaseAuth: AngularFireAuth,public router: Router,public db:DatabaseService, private fb: FormBuilder,public authService: AuthService,) {}
   
   msg = "";
-   
   ngOnInit() {
-    this.db.getLoggedInUser();
- 
+    //this.db.getLoggedInUser();
 
   }
 
  
+  logout() 
+  {
+   
+    this._firebaseAuth.auth.signOut()
+    .then((res) => {
+      this.db.loggedInUser.loggedIn = false;
+    alert(this.db.loggedInUser.loggedIn)
+  this.db.updateListing(this.db.loggedInUser.uid);
+    //  this.router.navigate(['/'])
+      
 
+  })
+    .catch((err) =>{
+    console.log(err + "")
+   // this.db.loggedInUser.loggedIn = true;
+    // this.db.updateListing(this.db.loggedInUser.uid);
+    }
+    
+    );
+  }
+ 
 
   GoToStudenSentence()
   {
@@ -43,7 +64,7 @@ export class AmIComponent implements OnInit {
       alert("בחרת רק 2 מקצועות \n אנא בחר עוד מקצוע 1 לפחות");
       return;
     }
-   this.db.updateListing(this.db.loggedInUser.email);
+   this.db.updateListing(this.db.loggedInUser.uid);
   this.router.navigate(['studen-sentence']);
     
     
@@ -64,14 +85,13 @@ export class AmIComponent implements OnInit {
     {
       if(this.db.loggedInUser.professions[i]=="")
         {
-          this.db.loggedInUser.professions[i]=str
-          return;
+          this.db.loggedInUser.professions[i]=str;
+           return;
         }
     }
     
     this.db.loggedInUser.professions[i]=str;
     
-      console.log(this.db.loggedInUser.professions[i]);
 ///////////////////////////////////////////
   }
   private printPro()
