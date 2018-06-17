@@ -1,13 +1,642 @@
 <meta charset="utf-8" />
 <body>
 
-    <p>  <button type="button" class="btn btn-link font">
-        <span class="glyphicon glyphicon-home"></span> Home
-        </button></p>
+    <nav class="navbar navbar-inverse parentnav">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" routerLink="/studentHomePage" type="button" class="btn btn-link">
+                <span class="glyphicon glyphicon-home"></span> Home</a></li>
+      
+            <li><a (click)="logout()"routerLink >יציאה </a></li> 
+          </ul>
+        </div>
+      </nav>
 
-<h1>מלא את שאלון החוזקות הבא</h1>
+        <h1 class="well"> ?מהן החוזקות שלי</h1>
 
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScaIsqhdVXc8TEoieZOObMuus6f1ePCJSjSiuDS5IWu8r-S_g/viewform" class="button btn btn-primary col-lg-1 btn1">שאלון</a>
+        <form>
+
+    
+
+
+
+
+            <div class="strengths">
+                <div class="button-group pull-right c1">
+                <button (click)="showPart(0)" class="btn btn-default btn1">
+                <i>חלק 1</i>
+                </button>
+                <div *ngIf="flag[0]==true"> 
+                <label class="req">המשפט: אפילו שאני לבדי, אף פעם לא משעמם לי </label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[0]"
+                        name="curiosity1" formControlName="curiosity1" [value]="choice"/>
+                    </div>
+                </div>
+
+            
+                <label class="req"> המשפט: כשאני רוצה לדעת משהו, אני מחפש/ת בספר או במחשב יותר מרוב הילדים בני גילי </label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[0]"
+                        name="curiosity2" formControlName="curiosity2" [value]="choice"/>
+                    </div>
+                </div>
+                <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(1)" class="btn btn-default btn1">
+                        <i>חלק 2</i>
+                        </button>
+                        <div *ngIf="flag[1]==true"> 
+                <label class="req">המשפט: אני כולי התלהבות כשאני לומד/ת משהו חדש</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[1]"
+                        name="studyLove1" formControlName="studyLove1" [value]="choice"/>
+                    </div>
+                </div>
+                <label class="req">המשפט: אני שונא/ת לבקר במוזיאונים </label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[1]"
+                        name="studyLove2" formControlName="studyLove2" [value]="choice"/>
+                    </div>
+                </div>
+                <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(2)" class="btn btn-default btn1">
+                        <i>חלק 3</i>
+                        </button>
+                        <div *ngIf="flag[2]==true"> 
+                <label class="req"> המשפט: כשעולה בעיה בזמן משחק או פעילות עם חברים, אני מצליח/ה בדרך-כלל להבין למה זה קרה</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[2]"
+                        name="judgment1" formControlName="judgment1" [value]="choice"/>
+                    </div>
+                </div>
+                <label class="req"> המשפט: הורי תמיד אומרים לי שאני משתמש בשיפוט גרוע</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[2]"
+                        name="judgment2" formControlName="judgment2" [value]="choice"/>
+                    </div>
+                </div>
+                <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(3)" class="btn btn-default btn1">
+                        <i>חלק 4</i>
+                        </button>
+                        <div *ngIf="flag[3]==true"> 
+                <label class="req"> המשפט: יש לי תמיד רעיונות חדשים לדברים כיפיים שאפשר לעשות</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[3]"
+                        name="inventiveness1" formControlName="inventiveness1" [value]="choice"/>
+                    </div>
+                </div>
+                <label class="req"> המשפט: יש לי דמיון פורה יותר מזה של רוב הילדים בגילי</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[3]"
+                        name="inventiveness2" formControlName="inventiveness2" [value]="choice"/>
+                    </div>
+                </div>
+                <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(4)" class="btn btn-default btn1">
+                        <i>חלק 5</i>
+                        </button>
+                        <div *ngIf="flag[4]==true"> 
+                <label class="req">המשפט: לא משנה באיזו קבוצת ילדים אני נמצא/ת, אני תמיד מתאים/מתאימה</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[4]"
+                        name="socialIntelligence1" formControlName="socialIntelligence1" [value]="choice"/>
+                    </div>
+                </div>
+                <label class="req"> המשפט: כשאני מרגיש/ה שמח/ה, עצוב/ה או כועס/ת, אני תמיד יודע/ת מדוע</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[4]"
+                        name="socialIntelligence2" formControlName="socialIntelligence2" [value]="choice"/>
+                    </div>
+                </div>
+                <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(5)" class="btn btn-default btn1">
+                        <i>חלק 6</i>
+                        </button>
+                        <div *ngIf="flag[5]==true"> 
+                <label class="req"> המשפט: אנשים בוגרים אומרים לי שאני מתנהג/ת בבגרות רבה יחסית לגילי</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[5]"
+                        name="perspective1" formControlName="perspective1" [value]="choice"/>
+                    </div>
+                </div>
+                <label class="req"> המשפט: אני יודע/ת מהם הדברים החשובים באמת בחיים</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[5]"
+                            name="perspective2" formControlName="perspective2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(6)" class="btn btn-default btn1">
+                        <i>חלק 7</i>
+                        </button>
+                        <div *ngIf="flag[6]==true"> 
+                <label class="req"> המשפט: אני עומד/ת על דעתי, גם כשאני פוחד/ת</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[6]"
+                            name="courage1" formControlName="courage1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: גם אם עלולים ללעוג לי, אני עושה מה שנכון בעינַי</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[6]"
+                            name="courage2" formControlName="courage2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(7)" class="btn btn-default btn1">
+                        <i>חלק 8</i>
+                        </button>
+                        <br>
+                        <div *ngIf="flag[7]==true"> 
+                <label class="req"> המשפט: הורי משבחים אותי תמיד על כך שאני משלים כל מטלה שנותנים לי</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[7]"
+                            name="persistence1" formControlName="persistence1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כשאני מקבל/ת מה שרציתי, זה בזכות מאמץ רב שהשקעתי בשביל זה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[7]"
+                            name="persistence2" formControlName="persistence2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+                </div>
+                <!--#########################################################################################################-->
+                <div class="button-group pull-right c2">
+                        <button (click)="showPart(8)" class="btn btn-default btn1">
+                                <i>חלק 9</i>
+                                </button>
+                                <div *ngIf="flag[8]==true"> 
+                <label class="req"> המשפט: אני לא קורא/ת לעולם יומן אישי או אי-מיילים של מישהו אחר</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[8]"
+                            name="integrity1" formControlName="integrity1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: אני אשקר כדי להיחלץ מצרות</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[8]"
+                            name="integrity2" formControlName="integrity2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(9)" class="btn btn-default btn1">
+                        <i>חלק 10</i>
+                        </button>
+                        <div *ngIf="flag[9]==true"> 
+                <label class="req"> המשפט: אני מתאמץ/מתאמצת להיות נחמד/ה לילדים חדשים בכיתה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[9]"
+                            name="Kindness1" formControlName="Kindness1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: בחודש האחרון עזרתי להורי או לשכנים בלי שביקשו ממני</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[9]"
+                            name="Kindness2" formControlName="Kindness2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(10)" class="btn btn-default btn1">
+                        <i>חלק 11</i>
+                        </button>
+                        <div *ngIf="flag[10]==true"> 
+                <label class="req"> המשפט: אני יודע/ת שאני האדם החשוב ביותר בחיים למישהו</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[10]"
+                            name="love1" formControlName="love1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: גם אם אני רב/ה הרבה עם אחי, אחותי או עם בני דודים - בכל זאת אני אוהב/ת אותם מאוד</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[10]"
+                            name="love2" formControlName="love2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(11)" class="btn btn-default btn1">
+                        <i>חלק 12</i>
+                        </button>
+                        <div *ngIf="flag[11]==true"> 
+                <label class="req"> המשפט: אני ממש נהנה/נהנית להשתייך למועדון או קבוצה, שלא במסגרת הלימודים</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[11]"
+                            name="GoodCitizenship1" formControlName="GoodCitizenship1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: בבית-הספר אני מצליח/ה לעבוד טוב מאוד בקבוצה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[11]"
+                            name="GoodCitizenship2" formControlName="GoodCitizenship2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(12)" class="btn btn-default btn1">
+                        <i>חלק 13</i>
+                        </button>
+                        <div *ngIf="flag[12]==true"> 
+                <label class="req"> המשפט: גם כשאיני אוהב/ת מישהו, אני מתייחס/ת אליו בהגינוּת</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[12]"
+                            name="fairness1" formControlName="fairness1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כשאני טועה, אני תמיד מודה בזה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[12]"
+                            name="fairness2" formControlName="fairness2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(13)" class="btn btn-default btn1">
+                        <i>חלק 14</i>
+                        </button>
+                        <div *ngIf="flag[13]==true"> 
+                <label class="req"> המשפט: במשחק או בפעילות ספורטיבית עם ילדים אחרים, תמיד אני רוצה להיות המנהיג/ה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[13]"
+                            name="leadership1" formControlName="leadership1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כנהיג/ה זכיתי באמונם או בהערצתם של חברים או עמיתים בצוות</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[13]"
+                            name="leadership2" formControlName="leadership2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(14)" class="btn btn-default btn1">
+                        <i>15</i>
+                        </button>
+                        <div *ngIf="flag[14]==true"> 
+                <label class="req"> המשפט: אני מסוגל/ת בקלות להפסיק לשחק במחשב או לצפות בטלוויזיה כשעלי לעשות זאת</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[14]"
+                            name="selfControl1" formControlName="selfControl1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: אני מאחר/ת תמיד לכל דבר</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[14]"
+                            name="selfControl2" formControlName="selfControl2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(15)" class="btn btn-default btn1">
+                        <i>חלק 16</i>
+                        </button>
+                        <div *ngIf="flag[15]==true"> 
+                <label class="req"> המשפט: אני מתרחק/ת ממצבים ומילדים שעלולים לסבך אותי בצרות</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[15]"
+                            name="Caution1" formControlName="Caution1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: מבוגרים אומרים לי תמיד שאני מקבל/ת החלטות נבונות בדיבורים ובמעשים</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[15]"
+                            name="Caution2" formControlName="Caution2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+
+                </div>
+                <!--#########################################################################################################-->
+                <div class="button-group pull-right c3" >
+                        <button (click)="showPart(16)" class="btn btn-default btn1">
+                                <i>חלק 17</i>
+                                </button>
+                                <div *ngIf="flag[16]==true"> 
+                <label class="req"> המשפט: במקום לדבר על עצמי, אני מעדיף/ מעדיפה לתת לאחרים לדבר על עצמם</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[16]"
+                            name="humility1" formControlName="humility1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: אנשים מתארים אותי כשוויצר/ית</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[16]"
+                            name="humility2" formControlName="humility2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(17)" class="btn btn-default btn1">
+                        <i>חלק 18</i>
+                        </button>
+                        <div *ngIf="flag[17]==true"> 
+                <label class="req"> המשפט: אני אוהב/ת להאזין למוסיקה או לצפות בסרטים או לרקוד או לראות הצגות תיאטרון - יותר מרוב הילדים</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[17]"
+                            name="beautyAppreciation1" formControlName="beautyAppreciation1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: אני אוהב/ת לצפות בעצים משנים את צבעם בסתיו</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[17]"
+                            name="beautyAppreciation2" formControlName="beautyAppreciation2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(18)" class="btn btn-default btn1">
+                        <i>חלק 19</i>
+                        </button>
+                        <div *ngIf="flag[18]==true"> 
+                <label class="req"> המשפט: כשאני חושב/ת על חיי, אני יוכל/ה למצוא דברים רבים שעליהם אני חש/ה הכרת תודה</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[18]"
+                            name="gratitude1" formControlName="gratitude1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: שכחתי לומר למורים שלי 'תודה' כשהם עזרו לי</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[18]"
+                            name="gratitude2" formControlName="gratitude2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(19)" class="btn btn-default btn1">
+                        <i>חלק 20</i>
+                        </button>
+                        <div *ngIf="flag[19]==true"> 
+                <label class="req"> המשפט: אני חושב/ת שבבגרותי אהיה אדם מאושר מאוד</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[19]"
+                            name="hope1" formControlName="hope1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כשאני מקבל/ת ציון גרוע בבית הספר, אני חושב/ת תמיד על הפעם הבאה, שבה אצליח יותר</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[19]"
+                            name="hope2" formControlName="hope2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(20)" class="btn btn-default btn1">
+                        <i>חלק 21</i>
+                        </button>
+                        <div *ngIf="flag[20]==true"> 
+                <label class="req"> המשפט: אני מאמין/מאמינה שכל אדם הוא מיוחד ויש לו מטרה חשובה בחיים</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[20]"
+                            name="spirituality1" formControlName="spirituality1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כשדברים משתבשים בחיי, אמונתי הדתית עוזרת לי להרגיש יותר טוב</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[20]"
+                            name="spirituality2" formControlName="spirituality2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(21)" class="btn btn-default btn1">
+                        <i>חלק 22</i>
+                        </button>
+                        <div *ngIf="flag[21]==true"> 
+                <label class="req"> המשפט: כשמישהו פוגע ברגשותי, אני לעולם לא מנסה להשיב לו או לה כגמולם או לנקום בהם</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[21]"
+                            name="forgiveness1" formControlName="forgiveness1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: אני סולח לאנשים על טעויותיהם</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[21]"
+                            name="forgiveness2" formControlName="forgiveness2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(22)" class="btn btn-default btn1">
+                        <i>חלק 23</i>
+                        </button>
+                        <div *ngIf="flag[22]==true"> 
+                <label class="req"> המשפט: רוב הילדים יגידו שכיף להיות איתי</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value1List[22]"
+                            name="humor1" formControlName="humor1" [value]="choice"/>
+                        </div>
+                    </div>
+                <label class="req"> המשפט: כשמישהו מחברי במצב רוח רע, או כשאני במצב רוח רע - אני אומר/ת משהו מצחיק כדי לשפר את המצב</label>
+                <div [formGroup]="Characteristicsform">
+                        <div *ngFor="let choice of choices">
+                            <i>{{choice}}</i>
+                            <input type="radio"
+                            required [(ngModel)]="this.value2List[22]"
+                            name="humor2" formControlName="humor2" [value]="choice"/>
+                        </div>
+                    </div>
+                    <br></div>
+                <!--#########################################################################################################-->
+                <button (click)="showPart(23)" class="btn btn-default btn1">
+                        <i>חלק 24</i>
+                        </button>
+                        <div *ngIf="flag[23]==true"> 
+                <label class="req"> המשפט: אני אוהב את החיים שלי</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value1List[23]"
+                        name="enthusiasm1" formControlName="enthusiasm1" [value]="choice"/>
+                    </div>
+                </div>
+
+                <label class="req"> המשפט: כשאני מתעורר/ת בכל בוקר, אני מלא/ת שמחה לקראת היום החדש</label>
+                <div [formGroup]="Characteristicsform">
+                    <div *ngFor="let choice of choices">
+                        <i>{{choice}}</i>
+                        <input type="radio"
+                        required [(ngModel)]="this.value2List[23]"
+                        name="enthusiasm2" formControlName="enthusiasm2" [value]="choice"/>
+                    </div>
+                </div>
+                <br>
+                </div>
+
+            </div>
+                
+            </div>
+       </form>
+
+       <div class="btn-group row">
+            <div >
+                <button (click)="onNextClicked()" class="btn btn-default btn2">המשך</button>
+                <button (click)="viewSurvey()" class="btn btn-default btn2">צפה בתוצאות השאלון</button>
+                <br>
+                <br>
+                <div *ngIf="showMySurvey==true">
+                    <div *ngFor="let strength of myStrengths2">
+                        <h3>{{'החוזקות שלי: ' + strength}}</h3>
+                    </div>
+                </div>
+            </div>
+
+       </div>
+
+       
 
 
 </body>

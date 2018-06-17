@@ -1,0 +1,50 @@
+.dropzone { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+    height: 300px;
+    border: 2px dashed #f16624;
+    border-radius: 5px;
+    background: white;
+    margin: 10px 50px ;
+    width: 60%;
+    float: left;
+    
+    
+
+}
+.details
+{
+    height: 300px;
+    display: flex;
+    width: 24%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+
+    float: right;
+    
+}
+
+
+
+progress::-webkit-progress-value {
+    transition: width 0.1s ease;
+}
+.navbar-inverse a{
+    color:white;
+    background-color: rgb(89, 4, 110);
+}
+
+.parentnav{
+    background-color: rgb(89, 4, 110);
+}
+.dropdown-menu a{
+    background-color: white;
+    color: rgb(89, 4, 110);
+}
+.dropdown-menu a:hover{
+    background-color: gray;
+    color: rgb(89, 4, 110);
+}

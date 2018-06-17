@@ -1,0 +1,27 @@
+<body>
+    <nav class="navbar navbar-inverse displaytnav">
+        <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-home"></span> Home</a></li>
+                </ul>
+        </div>
+    </nav>
+
+  <h2>צפייה בהודעות</h2>
+
+
+  <div class="getMessages">
+       <div *ngFor="let messages of messageL" >
+               <!--<h5>{{users.type}}</h5>-->
+               <div class ="msg">
+                תאריך : {{messages.date|date:"dd.MM.y"}}  , מאת : {{messages.from}}
+               <br>
+               נושא  : {{messages.subject}} 
+               <br>
+               {{messages.content}}
+              </div>
+       </div>
+    </div> 
+
+</body>

@@ -1,10 +1,16 @@
 <meta charset="utf-8" />
 <body>
-    <button type="button" class="btn btn-link font1">
-        <span class="glyphicon glyphicon-home"></span> Home
-    </button>
-
-   
+    <nav class="navbar navbar-inverse parentnav">
+        <div class="container-fluid">
+      
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-brand" routerLink="/studentHomePage" type="button" class="btn btn-link">
+                <span class="glyphicon glyphicon-home"></span> Home</a></li>
+      
+            <li><a (click)="logout()"routerLink >יציאה </a></li> 
+          </ul>
+        </div>
+      </nav>
 
   <p>מקצועות שאני טוב בהם</p>
   <div class="container">  <!-- -->
@@ -71,6 +77,6 @@
   </div>
 
   <p><button (click)="GoToStudenSentence()" type="button" class="btn btn-link font1"> הבא</button></p>
-  <button (click)="logout()">יציאההההההה</button>
+  <button (click)="logout()">יציאהההה</button>
 
 </body>

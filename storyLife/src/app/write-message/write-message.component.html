@@ -1,0 +1,35 @@
+<meta charset="utf-8" />
+<body>
+  <button type="button" class="btn btn-link font1">
+    <span routerLink="/techer" class="glyphicon glyphicon-home"></span> Home
+</button>
+
+<h2>כתיבת הודעה</h2>
+
+<div class="form-group" [formGroup]="messageform">
+  <label for="date" id="date" required [(ngModel)]="message.date"> תאריך: {{date|date:"dd.MM.y"}}</label>
+</div>
+<form class="form-horizontal" #formData='ngForm' (ngSubmit)="sendMessage(formData)">
+          <div class="form-group">
+          <label for="subject">:נושא</label>
+          <input type="text" class="form-control" id="subject" name="subject"   required (ngModel)="message.subject"  />
+        </div>
+        <div class="form-group" >
+          <label for="to">:אל</label>
+          <input type="text" class="form-control" id="to" name="to"  required (ngModel)="message.to">
+        </div>
+        <div class="form-group" >
+          <label for="content">:תוכן</label>
+          <textarea class="form-control" rows="5" id="content" name="content"  required (ngModel)="message.content" ></textarea>
+        </div>
+
+        <button  type="submit" [disabled]="!formData.valid" class="btn btn-success" >שלח</button>
+
+<button class="btn btn-default opbtn1" onclick="document.getElementById('subject').value = '',document.getElementById('to').value = '',
+        document.getElementById('content').value = ''">נקה נתונים</button>
+      </form>
+
+<div class="logopart">
+  <img class=logoimg src="assets/ppp/logo1.png"/>
+</div>
+</body>

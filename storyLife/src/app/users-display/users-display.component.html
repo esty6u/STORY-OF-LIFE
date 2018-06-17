@@ -1,58 +1,89 @@
 <body>
-  <nav class="navbar navbar-inverse displaytnav">
-      <div class="container-fluid">
-              <ul class="nav navbar-nav">
-                  <li><a routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
-                      <span class="glyphicon glyphicon-home"></span> Admin Home</a></li>
-              </ul>
-      </div>
-  </nav>
-
-  <div class="c1">
-      <h3> תלמידים</h3>
-       <div *ngFor="let users of userL" >
-           
-           <button  (click)="onGoToPage2(users)" *ngIf="users.type =='תלמיד'"  class="list-group-item list-group-item-action">
-
-
-               <!--<h5>{{users.type}}</h5>-->
-               {{users.lastName}} {{users.firstName}}
-               <br>
-               {{users.email}}
-               <br>
-
-               
-           </button>
+    <nav class="navbar navbar-inverse displaytnav">
+        <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a routerLink="/adminHome" class="navbar-brand" href="#" type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-home"></span> Admin Home</a></li>
+                </ul>
         </div>
-        <div id="professions"></div>
+    </nav>
+  
+    <div class="c1">
+        <h3> תלמידים</h3>
+         <div *ngFor="let users of userL" >
+             <a  (click)="onGoToPage2(users)" *ngIf="users.type =='תלמיד'"  class="list-group-item list-group-item-action">
+                 <!--<h5>{{users.type}}</h5>-->
+                 {{users.lastName}} {{users.firstName}}
+                 <br>
+                 {{users.email}}
+                 <br>
+                 <a *ngIf="users.showInDisplay==true" >
+                      {{'מקצועות שנבחרו: '+ users.professions}}
+                     <br>
+                      <a *ngIf="users.studSentence!=''">
+                           {{'אני לומד/ת הכי טוב כש' + users.studSentence}}
+                      </a>
+                      <br>
+                      <a *ngIf="users.myStrengths!= undefined">
+                           {{'החוזקות שלי: ' + users.myStrengths}}
+                      </a>
+                      <a *ngIf="users.myParrents!= undefined">
+                            {{'ההורים שלי: ' + users.myParrents}}
+                       </a>
+                      <br>
+                      <br>
+                      <button (click)="showSurvey(users)" routerLink="/survey" class="btn">
+                            <i>הסקר שלי</i>
+                      </button>
+                      <button (click)="addLinkedUsers(users)" class="btn">
+                        <i>הוספת הורים</i>
+                      </button>
+                      <br>
+                      <br>
+                 </a>
 
-    </div> 
-    <div class="c2">
-          <h3>הורים </h3>
-       <div *ngFor="let users of userL" >
-           <a *ngIf="users.type =='הורה'"  class="list-group-item list-group-item-action">
-               <!--<h5>{{users.type}}</h5>-->
-               {{users.lastName}} {{users.firstName}}
-               <br>
-               {{users.email}}
-           </a>
-       </div>
-    </div> 
-    <div class="c3">
-          <h3>מורים </h3>
-       <div *ngFor="let users of userL" > 
-           <a *ngIf="users.type =='מורה'"  class="list-group-item list-group-item-action">
-               <!--<h5>{{users.type}}</h5>-->
-               {{users.lastName}} {{users.firstName}}
-               <br>
-               {{users.email}}
+                 
+             </a>
+            
+         </div>
+        
+      </div> 
+      
+      <div class="c2">
+            <h3>הורים </h3>
+         <div (click)="showMyDetails(users)" *ngFor="let users of userL" >
+             <a *ngIf="users.type =='הורה'"  class="list-group-item list-group-item-action">
+                 <!--<h5>{{users.type}}</h5>-->
+                 {{users.lastName}} {{users.firstName}}
+                 <br>
+                 {{users.email}}
+                 <br>
 
-           </a>
-       </div>
-    </div>  
-
-    <div class="logopart">
-        <img class=logoimg src='assets/ppp/logo1.png'/>
-      </div>
-
-</body>
+             </a>
+         </div>
+      </div> 
+      <div class="c3">
+            <h3>מורים </h3>
+         <div (click)="showMyDetails(users)" *ngFor="let users of userL" > 
+             <a *ngIf="users.type =='מורה'"  class="list-group-item list-group-item-action">
+                 <!--<h5>{{users.type}}</h5>-->
+                 {{users.lastName}} {{users.firstName}}
+                 <br>
+                 {{users.email}}
+                 <br>
+                 <a *ngIf="users.showInDisplay==true" >
+                    <button (click)="addLinkedUsers(users)" routerLink="/addLinkedUsers" class="btn">
+                        <i>הוספת תלמידים</i>
+                    </button>
+                    <br>
+                    <br>
+                </a>
+             </a>
+         </div>
+      </div>  
+  
+      <div class="logopart">
+          <img class=logoimg src='assets/ppp/logo1.png'/>
+        </div>
+  
+  </body>

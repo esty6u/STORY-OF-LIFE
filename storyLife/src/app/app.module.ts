@@ -29,6 +29,25 @@ import { StudentsDataComponent } from './students-data/students-data.component';
 import { UsersManageComponent } from './users-manage/users-manage.component';
 import { DisplayService } from './services/display.service';
 import { UsersDisplayComponent } from './users-display/users-display.component';
+import { CookieBackendService } from 'angular2-cookie/services/cookies.backend.service';
+import { DropZoneDirective } from './drop-zone.directive';
+import { UploadropComponent } from './uploadrop/uploadrop.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { FileSizePipe } from './file-size.pipe';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+import { User } from './users/user';
+import { SurveyResultsComponent } from './survey-results/survey-results.component';
+import { AddLinkedUsersComponent } from './add-linked-users/add-linked-users.component';
+import { UploadScheduleComponent } from './upload-schedule/upload-schedule.component';
+import { ViewScheduleComponent } from './view-schedule/view-schedule.component';
+import { WriteMessageComponent } from './write-message/write-message.component';
+import { ReadMessagesComponent } from './read-messages/read-messages.component';
+import { DeleteMessageComponent } from './delete-message/delete-message.component';
+import { ConfirmMessageComponent } from './confirm-message/confirm-message.component';
+
+
+
 //checkkk
 
 
@@ -38,22 +57,35 @@ import { UsersDisplayComponent } from './users-display/users-display.component';
 
 
 const appRoutes: Routes=[
-  {  path:'',component: MainPageComponent},
-  { path:'login',component: LoginComponent},
-  {path:'admin',component: AdminPageComponent},
-  {path:'parent',component: MainPageParentComponent},
-  {path:'techer', component: TecherMainPageComponent},
-  {path:'am-i',component: AmIComponent},
-  {path:'studen-sentence',component: StudentSentenceComponent},
-  { path:'studen-Questionnaire', component: QuestionnaireComponent},
-  {path:'studentHomePage',component: StudentHomePageComponent},
-  { path:'adminHome',component: AdminHomeComponent},
-  {path:'gallery', component: GalleryComponent},
-  { path:'messagees', component: PublicMessageesComponent},
-  {path:'studentsData', component: StudentsDataComponent},
-  { path:'usersManage', component: UsersManageComponent},
-  { path:'usersDisplay', component:  UsersDisplayComponent},
-  
+  {path:'',component: MainPageComponent},
+
+  {path:'login',component: LoginComponent},
+  {path:'admin',component: AdminPageComponent,/*canActivate: [AuthGuard]*/},
+  {path:'adminHome',component: AdminHomeComponent, /*canActivate: [AuthGuard]*/},
+  {path:'studentHomePage',component: StudentHomePageComponent,/* canActivate: [AuthGuard]*/},
+  {path:'am-i',component: AmIComponent, /*canActivate: [AuthGuard]*/},
+  {path:'studen-sentence',component: StudentSentenceComponent, /*canActivate: [AuthGuard]*/},
+  {path:'studen-Questionnaire', component: QuestionnaireComponent, /*canActivate: [AuthGuard]*/},
+  {path:'usersManage', component: UsersManageComponent,/*canActivate: [AuthGuard]*/},
+  {path:'usersDisplay', component:  UsersDisplayComponent, /*canActivate: [AuthGuard]*/},
+  {path:'uplaodrop',component:  FileUploadComponent},  
+  {path:'Schedule', component:  ScheduleComponent,/* canActivate: [AuthGuard]*/},
+  {path:'msgDisplay', component:  WriteMessageComponent,/* canActivate: [AuthGuard]*/ },
+  {path:'survey', component: SurveyResultsComponent },
+  {path:'addLinkedUsers', component: AddLinkedUsersComponent},
+  {path:'parent',component: MainPageParentComponent, /*canActivate: [AuthGuard]*/},
+  {path:'techer', component: TecherMainPageComponent,/* canActivate: [AuthGuard]*/},
+  {path:'messagees', component: PublicMessageesComponent,/*canActivate: [AuthGuard]*/},
+  {path:'studentsData', component: StudentsDataComponent,/*canActivate: [AuthGuard]*/},
+  {path:'gallery', component: GalleryComponent,/*canActivate: [AuthGuard]*/},
+  { path:'uploadSchedule', component:  UploadScheduleComponent/*, canActivate: [AuthGuard] */},
+  { path:'viewSchedule', component: ViewScheduleComponent /*, canActivate: [AuthGuard] */},
+  { path: 'msgRead', component:  ReadMessagesComponent, /*canActivate: [AuthGuard]*/ },
+  { path: 'msgConf', component:   ConfirmMessageComponent, /*canActivate: [AuthGuard]*/ },
+  { path: 'msgDel', component:  DeleteMessageComponent, /*canActivate: [AuthGuard]*/ },
+
+
+    
 ]
 @NgModule({
   declarations: [
@@ -73,7 +105,22 @@ const appRoutes: Routes=[
     PublicMessageesComponent,
     StudentsDataComponent,
     UsersManageComponent,
-    UsersDisplayComponent
+    UsersDisplayComponent,
+    DropZoneDirective,
+    UploadropComponent,
+    FileUploadComponent,
+    FileSizePipe,
+    ScheduleComponent,
+    WriteMessageComponent,
+    SurveyResultsComponent,
+    AddLinkedUsersComponent,
+    UploadScheduleComponent,
+    ViewScheduleComponent,
+    ConfirmMessageComponent,
+    DeleteMessageComponent,
+    ReadMessagesComponent,
+
+    
   ],
   imports: [
     BrowserModule,
@@ -86,7 +133,10 @@ const appRoutes: Routes=[
     AngularFireDatabaseModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DatabaseService,AuthService,AuthGuard,DisplayService],
-  bootstrap: [AppComponent]
+  providers: [DatabaseService,AuthService,AuthGuard,DisplayService, CookieService],
+  bootstrap: [AppComponent],
+  
 })
-export class AppModule { }
+export class AppModule {
+
+}

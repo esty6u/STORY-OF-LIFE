@@ -12,7 +12,7 @@
             <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">ניהול משתמשים<span class="caret"></span></a>  
               <ul class="dropdown-menu">
                 <li><a routerLink="/admin">הוספה</a></li>
-                <li><a routerLink="/UsersManage">הקפאה/מחיקה</a></li>
+                <li><a routerLink="/usersManage">הקפאה/מחיקה</a></li>
                 <li><a routerLink="/usersDisplay">רשימת משתמשים</a></li>
               </ul>
             </li>
@@ -28,8 +28,7 @@
                 </ul>
             </li>
 
-            
-            
+
 
             <li>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"> מערכת הודעות<span class="caret"></span></a>  
@@ -41,7 +40,9 @@
             </li>
 
             <li><a routerLink="/studentsData">נתוני תלמידים</a></li>
-            <li><a routerLink="/gallery">גלרייה</a></li>
+            <li><a routerLink="/uplaodrop">גלרייה</a></li>
+            <li><a (click)="logout()"routerLink >יציאה </a></li>
+
 
             
           </ul>

@@ -19,8 +19,8 @@ export class AuthService {
     
    
   }
+  
   signInRegular(email, password) {
-    
     return this._firebaseAuth.auth.signInWithEmailAndPassword(email, password);
  }
 
@@ -28,7 +28,7 @@ export class AuthService {
 
   isLoggedIn() 
   {
-      if (this.userDetails == null ) 
+      if (this.userDetails==null  ) 
       {
         return false;
       }

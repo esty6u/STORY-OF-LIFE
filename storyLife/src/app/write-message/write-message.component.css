@@ -1,0 +1,58 @@
+body{
+    background-image: url("assets/ppp/6.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.navbar-inverse a{
+    color:white;
+    background-color: rgb(89, 4, 110);
+}
+
+.parentnav{
+    background-color: rgb(89, 4, 110);
+}
+.dropdown-menu a{
+    background-color: white;
+    color: rgb(89, 4, 110);
+}
+.dropdown-menu a:hover{
+    background-color: gray;
+    color: rgb(89, 4, 110);
+}
+.text
+{
+    text-align: center;
+   
+   
+    
+
+}
+.form-group{
+    width:50%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-success
+{
+    text-align: center;
+  justify-content: center;
+  margin-left: 50%;
+}
+h2{
+    text-align: center;
+    font-weight: bold;
+    color:darkslateblue;
+}
+.form-group{
+    direction: rtl;
+}

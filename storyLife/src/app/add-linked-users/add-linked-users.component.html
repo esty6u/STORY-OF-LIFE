@@ -1,0 +1,40 @@
+<div class="survey"> 
+  <br>
+  <button routerLink="/usersDisplay" class="btn">
+    <i>חזור</i>
+  </button>
+  <br>
+    <h4>{{fname}} {{lname}}</h4>
+    <h4>{{email}}</h4>
+    <div *ngIf = "type == 'תלמיד'">
+      <h3>הורים קיימים במערכת</h3>
+      <div *ngFor="let parent of userL">
+        <div *ngIf="parent.type =='הורה'">
+          <input type="checkbox" (click)="addParent(parent.email)">
+          {{parent.email}}
+        </div>
+      </div>
+      <br>
+      <button (click)="uploadLU()">בצע שינוי</button>
+    </div>
+
+
+
+
+
+      <div *ngIf="type == 'מורה'">
+          <h3>תלמידים קיימים במערכת</h3>
+          <div *ngFor="let student of userL">
+            <div *ngIf="student.type =='תלמיד'">
+              <input type="checkbox" (click)="addStudent(student.email)">
+              {{student.email}}
+            </div>
+          </div>
+          <br>
+          <button (click)="uploadLU()">בצע שינוי</button>
+        </div>
+
+
+
+</div>
+

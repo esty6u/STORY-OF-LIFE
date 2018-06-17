@@ -6,6 +6,8 @@ import { DatabaseService } from '../services/database.service';
 import { FormGroup ,FormBuilder} from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthGuard } from '../services/auth-guard.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
  var i=0;
 @Component({
   selector: 'app-am-i',
@@ -14,25 +16,45 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class AmIComponent implements OnInit {
   
-  constructor(private _firebaseAuth: AngularFireAuth,public router: Router,public db:DatabaseService, private fb: FormBuilder,public authService: AuthService,) {}
+  constructor(private _firebaseAuth: AngularFireAuth,public router: Router,public db:DatabaseService,
+     private fb: FormBuilder,
+     public authService: AuthService,
+     public authGurdService:AuthGuard,
+     public cookieService:CookieService)
+    {
+
+    }
   
   msg = "";
-  ngOnInit() {
-    //this.db.getLoggedInUser();
+  ngOnInit() 
+  {
+    if(<User>this.cookieService.getObject('user')!=undefined)
+    {
+         this.db.loggedInUser = <User>this.cookieService.getObject('user');
+         if(this.db.loggedInUser.type==='הורה' || this.db.loggedInUser.type==='מורה')
+             this.router.navigate(['/'])
 
+    }
+   else
+       this.router.navigate(['/'])
   }
 
  
   logout() 
   {
-   
+    //this.cookieService.set('User login status', 'false');
+    this.cookieService.putObject('user',undefined);
     this._firebaseAuth.auth.signOut()
+
     .then((res) => {
-      this.db.loggedInUser.loggedIn = false;
-    alert(this.db.loggedInUser.loggedIn)
-  this.db.updateListing(this.db.loggedInUser.uid);
-    //  this.router.navigate(['/'])
-      
+      alert("יצא"+this.db.loggedInUser.email)
+
+    this.db.loggedInUser.loggedIn = false;
+    this.db.updateListing(this.db.loggedInUser.uid);
+    this.db.loggedIn = 'false';
+     this.router.navigate(['/'])
+     
+
 
   })
     .catch((err) =>{
@@ -45,30 +67,7 @@ export class AmIComponent implements OnInit {
   }
  
 
-  GoToStudenSentence()
-  {
-    var counter=0;
-    for (var i=0;i<this.db.loggedInUser.professions.length;i++)
-    {
-      if(this.db.loggedInUser.professions[i]!="")
-        counter++;
-    }
-    if(counter<3)
-    {
-      if (counter==0)
-      alert("לא נבחרו מקצועות\n אנא בחר לפחות 3 מקצועות");
-      
-      if (counter==1)
-          alert("בחרת רק מקצוע 1\n אנא בחר עוד 2 מקצועות לפחות");
-      if (counter==2)
-      alert("בחרת רק 2 מקצועות \n אנא בחר עוד מקצוע 1 לפחות");
-      return;
-    }
-   this.db.updateListing(this.db.loggedInUser.uid);
-  this.router.navigate(['studen-sentence']);
-    
-    
-  }
+
   
   private writeProfession(str)
   {
@@ -94,6 +93,33 @@ export class AmIComponent implements OnInit {
     
 ///////////////////////////////////////////
   }
+  GoToStudenSentence()
+  {
+    var counter=0;
+    for (var i=0;i<this.db.loggedInUser.professions.length;i++)
+    {
+      if(this.db.loggedInUser.professions[i]!="")
+        counter++;
+    }
+    if(counter<3)
+    {
+      if (counter==0)
+      alert("לא נבחרו מקצועות\n אנא בחר לפחות 3 מקצועות");
+      
+      if (counter==1)
+          alert("בחרת רק מקצוע 1\n אנא בחר עוד 2 מקצועות לפחות");
+      if (counter==2)
+      alert("בחרת רק 2 מקצועות \n אנא בחר עוד מקצוע 1 לפחות");
+      return;
+    }
+       this.cookieService.putObject('user',this.db.loggedInUser)
+
+    //alert(this.db.loggedInUser.email)
+   this.db.updateListing(this.db.loggedInUser.uid);
+  this.router.navigate(['studen-sentence']);
+    
+    
+  }
   private printPro()
   {
     this.msg=""; 
@@ -113,4 +139,8 @@ export class AmIComponent implements OnInit {
         
     }
   }
+
+
+
+  
 }

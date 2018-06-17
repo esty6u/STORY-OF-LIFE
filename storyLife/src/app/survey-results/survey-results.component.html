@@ -1,0 +1,19 @@
+<div class="survey"> 
+    <br>
+    <button routerLink="/usersDisplay" class="btn">
+      <i>חזור</i>
+    </button>
+    <br>
+    <h4>{{fname}} {{lname}}</h4>
+    <h4>{{email}}</h4>
+    <h3>תוצאות הסקר שלי </h3>
+
+    <div *ngIf="survey!=''">
+      <div *ngFor="let item of survey" >
+        {{item}}
+      </div>
+    </div>
+    <div>
+        {{flag}}
+    </div>
+  </div>

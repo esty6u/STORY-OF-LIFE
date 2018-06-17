@@ -1,0 +1,35 @@
+<body>
+  <nav class="navbar navbar-inverse displaytnav">
+      <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a routerLink="/techer" class="navbar-brand" href="#" type="button" class="btn btn-link">
+                      <span class="glyphicon glyphicon-home"></span> Home</a></li>
+              </ul>
+      </div>
+  </nav>
+
+<h2>צפייה בהודעות</h2>
+
+
+<div class="getMessages">
+    מספר ההודעות: {{messageL.length}}
+     <div *ngFor="let messages of messageL" >
+     
+       <a>
+             <!--<h5>{{users.type}}</h5>-->
+             <div class ="msg">
+                <a>
+              תאריך : {{messages.date|date:"dd.MM.y"}}  , מאת : {{messages.from}}
+             <br>
+             נושא  : {{messages.subject}} 
+             <br>
+             {{messages.content}}
+             <br>
+             <button  type="submit"  class="btn" (click)="msgDelete(messages.date)" >מחיקת הודעה</button>
+            </a>
+            </div>
+          </a>
+     </div>
+  </div> 
+
+</body>

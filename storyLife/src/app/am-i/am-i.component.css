@@ -1,6 +1,6 @@
 body
 {
-    background-image: url("assets/img/background1.jpg");
+    background-image: url("assets/ppp/6.jpg");
     position: absolute; 
     top: 0; 
     left: 0;
@@ -93,4 +93,23 @@ button
 {
     background-color: rgb(240, 64, 29);
     border: 3px solid rgb(63, 3, 3); 
+}
+
+
+
+.navbar-inverse a{
+    color:white;
+    background-color: rgb(89, 4, 110);
+}
+
+.parentnav{
+    background-color: rgb(89, 4, 110);
+}
+.dropdown-menu a{
+    background-color: white;
+    color: rgb(89, 4, 110);
+}
+.dropdown-menu a:hover{
+    background-color: gray;
+    color: rgb(89, 4, 110);
 }

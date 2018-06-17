@@ -1,9 +1,17 @@
 <meta charset="utf-8" />
 <body>
 
-   <p>  <button type="button" class="btn btn-link font">
-    <span class="glyphicon glyphicon-home"></span> Home
-    </button></p>
+  <nav class="navbar navbar-inverse parentnav">
+    <div class="container-fluid">
+  
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" routerLink="/studentHomePage" type="button" class="btn btn-link">
+            <span class="glyphicon glyphicon-home"></span> Home</a></li>
+  
+        <li><a (click)="logout()"routerLink >יציאה </a></li> 
+      </ul>
+    </div>
+  </nav>
 
 <div class="container">
 
@@ -11,19 +19,16 @@
         <h1>:בחר/י משפט שהכי מאפיין אותך</h1>
         <p></p>
       <h2><label for="sel1">...אני לומד/ת הכי טוב כש</label></h2>  
-        <select class="form-control" id="sel1">
-          <option>כשאני מתרגל/ת לבד</option>
-          <option>המורה מסבירה וכותבת על הלוח</option>
-          <option>כשהמורה מסבירה לי בקבוצה קטנה</option>
-          <option>כשאני לומד לבד</option>
-          <option>אני לומד עם חבר</option>
-          <option>אני עובד על המחשב</option>
+        <select class="form-control" id="sel1" (change)="selectSentence($event)">
+          <option value="">...אנא בחר משפט מהרשימה</option>
+          <option value="אני מתרגל/ת לבד">אני מתרגל/ת לבד</option>
+          <option value="המורה מסבירה וכותבת על הלוח">המורה מסבירה וכותבת על הלוח</option>
+          <option value="המורה מסבירה לי בקבוצה קטנה">המורה מסבירה לי בקבוצה קטנה</option>
+          <option value="אני לומד לבד" >אני לומד לבד</option>
+          <option value="אני לומד עם חבר" >אני לומד עם חבר</option>
+          <option value="אני עובד על המחשב" >אני עובד על המחשב</option>
         </select>
       </div>
-
 </div>
-
 <p><button (click)="GoToQuestionnaire()" type="button" class="btn btn-link font"> הבא</button></p>
 </body>
-
-

@@ -9,6 +9,7 @@ import { RouterLink, Router } from '@angular/router';
 import { FormsModule, FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { DatabaseService } from '../services/database.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 @Component({
   selector: 'app-users-manage',
@@ -23,7 +24,16 @@ export class UsersManageComponent implements OnInit {
   signUpError: boolean; //if true -> there is an error in the registration form
 
   ngOnInit() {
-   
+    if(<User>this.cookieService.getObject('user')!=undefined)
+    {
+         this.db.loggedInUser = <User>this.cookieService.getObject('user');
+         if(this.db.loggedInUser.type==='תלמיד' || this.db.loggedInUser.type==='הורה'||this.db.loggedInUser.type==='מורה')
+             this.router.navigate(['/'])
+
+    }
+   else
+       this.router.navigate(['/'])
+  
   this.userService.getUserList().valueChanges().subscribe(userList =>{3
       this.db.usersUpdate = userList;
       this.userL = userList;
@@ -34,7 +44,7 @@ export class UsersManageComponent implements OnInit {
   }
  
 
-  constructor(private userService: DisplayService, private _firebaseAuth: AngularFireAuth, public router: Router,public db: DatabaseService) { 
+  constructor(private userService: DisplayService, private _firebaseAuth: AngularFireAuth, public router: Router,public db: DatabaseService,private cookieService: CookieService) { 
     this.userTypes = ['תלמיד', 'מורה' ,'הורה'];
     this.user = new User(false, this.userTypes[0]); //deafult type is student
     this.signUpError=false; // default- no registration form errors

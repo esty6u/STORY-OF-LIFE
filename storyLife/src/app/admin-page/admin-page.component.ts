@@ -8,6 +8,8 @@ import { FormsModule, FormGroup, FormControl, FormBuilder, Validators, ReactiveF
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AmIComponent } from '../am-i/am-i.component';
 import { AppComponent } from '../app.component';
+import { AuthGuard } from '../services/auth-guard.service';
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 
 
 @Component({
@@ -26,9 +28,21 @@ export class AdminPageComponent {
   
   ngOnInit() {
     this.validateForm()
+    if(<User>this.cookieService.getObject('user')!=undefined)
+    {
+         this.db.loggedInUser = <User>this.cookieService.getObject('user');
+         if(this.db.loggedInUser.type!='מנהל')
+             this.router.navigate(['/'])
+    }
+   else
+       this.router.navigate(['/'])
+
+   
+
   }
 
-  constructor(public db: DatabaseService, public auth: AuthService,private _firebaseAuth: AngularFireAuth, public router: Router) {
+  constructor(public db: DatabaseService, public auth: AuthService,private _firebaseAuth: AngularFireAuth, public router: Router,public authGurdService:AuthGuard,public cookieService:CookieService) {
+    
     this.userTypes = ['תלמיד', 'מורה','מנהל','הורה'];
 
     this.user = new User(false, this.userTypes[0]); //deafult type is student
@@ -59,15 +73,24 @@ export class AdminPageComponent {
 
           //successfully registered:
           if(this.user.type=='תלמיד')
-          this.user.professions = new Array();
+          {
+            this.user.studSentence="";
+            this.user.professions = new Array();
+            this.user.myParents = new Array();
+            this.user.myStrengths = new Array();
+            this.user.mySurvey = new Array();
+            this.user.showSurvey = false;
+            this.user.SurveyCompleted = false;
+          }
           if(this.user.type=='מורה')
             this.user.myStudents=new Array();
+
           this.user.uid = res.uid; // sets the uid value in the attribute
           this.db.addUserToDB(this.user); // add user to database
-          this.router.navigate(['login'])// go to the login screen
-
+          alert("משתמש נרשם במערכת");
         })
   }
+
 
   public validateForm() {
     // Limitations on fields in the registration form
